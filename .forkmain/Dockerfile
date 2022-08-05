@@ -23,7 +23,8 @@ FROM gcr.io/distroless/base-debian11
 WORKDIR /
 
 COPY --from=build /app /app
+COPY examples/ha/alertmanager.yml /app/alertmanager.yml
 
-EXPOSE 8080
+EXPOSE 9093
 
 ENTRYPOINT ["/app"]
